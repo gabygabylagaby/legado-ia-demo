@@ -2,7 +2,7 @@
 
 class LegadoManager {
     constructor() {
-        this.chats = JSON.parse(localStorage.getItem('legado_chats')) || [];
+        this.chats = JSON.parse(localStorage.getItem('legado_chats_en')) || [];
         this.currentChatId = null;
         this.isLoggedIn = sessionStorage.getItem('legado_auth') === 'true';
         
@@ -340,7 +340,7 @@ class LegadoManager {
     }
 
     saveChats() {
-        localStorage.setItem('legado_chats', JSON.stringify(this.chats));
+        localStorage.setItem('legado_chats_en', JSON.stringify(this.chats));
     }
 
     renderHistory() {
