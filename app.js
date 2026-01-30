@@ -52,10 +52,10 @@ class LegadoManager {
             const yDate = yesterday.toISOString().split('T')[0];
             
             this.chats = [
-                { id: '1', title: 'Recurso de casación en Bolivia', date: this.dateKey, messages: [] },
-                { id: '2', title: 'Procedimiento de divorcio', date: yDate, messages: [] },
-                { id: '3', title: 'Despido injustificado', date: yDate, messages: [] },
-                { id: '4', title: 'Contrato de compraventa', date: yDate, messages: [] }
+                { id: '1', title: 'Cassation appeal in Bolivia', date: this.dateKey, messages: [] },
+                { id: '2', title: 'Divorce procedure', date: yDate, messages: [] },
+                { id: '3', title: 'Unjustified dismissal', date: yDate, messages: [] },
+                { id: '4', title: 'Sales contract', date: yDate, messages: [] }
             ];
             this.saveChats();
         }
@@ -116,7 +116,7 @@ class LegadoManager {
         const searchBtn = document.getElementById('searchChatBtn');
         if (searchBtn) {
             searchBtn.addEventListener('click', () => {
-                alert('Funcionalidad de búsqueda en desarrollo');
+                alert('Search functionality under development');
             });
         }
 
@@ -136,12 +136,12 @@ class LegadoManager {
     login() {
         const logDiv = document.getElementById('loginLog');
         logDiv.textContent = '';
-        // Simulación de login siempre exitoso
+        // Simulate login always successful
         const btn = this.loginForm.querySelector('button');
         const originalText = btn.innerText;
-        btn.innerText = 'Autenticando...';
+        btn.innerText = 'Authenticating...';
         btn.disabled = true;
-        console.log('[Legado] Intentando login...');
+        console.log('[Legado] Attempting login...');
 
         setTimeout(() => {
             let storageOk = true;
@@ -149,13 +149,13 @@ class LegadoManager {
                 sessionStorage.setItem('legado_auth', 'true');
             } catch (e) {
                 storageOk = false;
-                console.warn('[Legado] sessionStorage falló:', e);
+                console.warn('[Legado] sessionStorage failed:', e);
             }
             this.isLoggedIn = true;
             logDiv.style.color = '#0a0';
-            logDiv.textContent = 'Login exitoso, cargando interfaz...';
-            console.log('[Legado] Login exitoso, mostrando interfaz');
-            // Forzar mostrar la app aunque falle sessionStorage
+            logDiv.textContent = 'Login successful, loading interface...';
+            console.log('[Legado] Login successful, showing interface');
+            // Force show app even if sessionStorage fails
             this.showApp();
             btn.innerText = originalText;
             btn.disabled = false;
@@ -375,53 +375,53 @@ class LegadoManager {
                 const lowerInput = input.toLowerCase();
                 
                 if (lowerInput.includes('sociedad') || lowerInput.includes('empresa') || lowerInput.includes('srl') || lowerInput.includes('s.r.l')) {
-                    resolve(`Para constituir una **Sociedad de Responsabilidad Limitada (S.R.L.)** en Bolivia, debes seguir estos pasos clave:
+                    resolve(`To constitute a **Limited Liability Company (S.R.L.)** in Bolivia, you must follow these key steps:
 
-1. **Control de Homonimia**: Verificar en FUNDEMPRESA (o SEPREC) que el nombre esté disponible.
-2. **Minuta de Constitución**: Documento redactado por un abogado que incluye el capital social, objeto, domicilio y socios.
-3. **Escritura Pública**: Protocolización de la minuta ante Notario de Fe Pública.
-4. **Registro de Comercio**: Inscripción en el Registro de Comercio para obtener la Matrícula de Comercio.
-5. **NIT**: Obtención del Número de Identificación Tributaria en Impuestos Nacionales.
+1. **Homonymy Control**: Verify at FUNDEMPRESA (or SEPREC) that the name is available.
+2. **Constitution Minute**: Document drafted by a lawyer that includes the social capital, object, domicile and partners.
+3. **Public Deed**: Protocolization of the minute before a Public Notary.
+4. **Commerce Registry**: Registration in the Commerce Registry to obtain the Commerce Registration.
+5. **NIT**: Obtaining the Tax Identification Number at National Taxes.
 
-El capital social se divide en cuotas de igual valor (múltiplos de 100 Bs) y la responsabilidad está limitada al monto de los aportes.`);
+The social capital is divided into quotas of equal value (multiples of 100 Bs) and liability is limited to the amount of contributions.`);
                 } 
                 else if (lowerInput.includes('alquiler') || lowerInput.includes('arrendamiento') || lowerInput.includes('contrato')) {
-                    resolve(`En un **Contrato de Alquiler de Vivienda**, es fundamental incluir las siguientes cláusulas para seguridad de ambas partes:
+                    resolve(`In a **Housing Rental Contract**, it is essential to include the following clauses for the security of both parties:
 
-* **Objeto y Ubicación**: Descripción precisa del inmueble.
-* **Canon de Alquiler**: Monto mensual, fecha de pago y moneda.
-* **Garantía**: Monto entregado para cubrir daños o servicios impagos al finalizar el contrato (usualmente 1 o 2 meses).
-* **Plazo**: Duración del contrato (el Código Civil establece plazos máximos, pero comúnmente es 1 año).
-* **Usos y Prohibiciones**: Destino exclusivo para vivienda, prohibición de subalquilar sin autorización.
-* **Resolución**: Causales para terminar el contrato antes de tiempo.
+* **Object and Location**: Precise description of the property.
+* **Rental Fee**: Monthly amount, payment date and currency.
+* **Guarantee**: Amount delivered to cover damages or unpaid services at the end of the contract (usually 1 or 2 months).
+* **Term**: Duration of the contract (the Civil Code establishes maximum terms, but commonly it is 1 year).
+* **Uses and Prohibitions**: Exclusive destination for housing, prohibition of subleasing without authorization.
+* **Resolution**: Grounds for terminating the contract early.
 
-Te recomiendo reconocer las firmas ante notario para darle fecha cierta al documento.`);
+I recommend acknowledging the signatures before a notary to give a certain date to the document.`);
                 }
                 else if (lowerInput.includes('laboral') || lowerInput.includes('beneficios') || lowerInput.includes('despido')) {
-                    resolve(`En materia **Laboral**, aquí tienes algunos puntos clave de la Ley General del Trabajo:
+                    resolve(`In **Labor** matters, here are some key points of the General Labor Law:
 
-* **Indemnización por Tiempo de Servicios**: Corresponde un sueldo por cada año trabajado si hay despido injustificado o retiro voluntario luego de 90 días.
-* **Desahucio**: Pago de 3 sueldos promedio si el despido es intempestivo y sin causa legal justificada (Artículo 16 LGT).
-* **Aguinaldo**: Pago obligatorio de un sueldo completo sin descuentos antes del 20 de diciembre.
-* **Vacaciones**: 
-  - 1 a 5 años: 15 días hábiles
-  - 5 a 10 años: 20 días hábiles
-  - 10+ años: 30 días hábiles
+* **Compensation for Time of Service**: Corresponds to one salary for each year worked if there is unjustified dismissal or voluntary retirement after 90 days.
+* **Eviction**: Payment of 3 average salaries if the dismissal is untimely and without justified legal cause (Article 16 LGT).
+* **Christmas Bonus**: Mandatory payment of a full salary without deductions before December 20.
+* **Vacations**: 
+  - 1 to 5 years: 15 working days
+  - 5 to 10 years: 20 working days
+  - 10+ years: 30 working days
 
-¿Necesitas que calculemos algún beneficio específico con datos reales?`);
+Do you need us to calculate any specific benefit with real data?`);
                 }
                 else {
-                    resolve(`Entendido. Como **Legado IA**, estoy procesando tu consulta sobre "${input}". 
+                    resolve(`Understood. As **Legado AI**, I am processing your query about "${input}". 
 
-Para darte una respuesta jurídica precisa bajo la legislación boliviana, ¿podrías especificar un poco más el contexto?
+To give you a precise legal response under Bolivian legislation, could you specify the context a little more?
 
-Puedo ayudarte en áreas como:
-* Derecho Civil (Contratos, Deudas)
-* Derecho Comercial (Empresas, Sociedades)
-* Derecho Laboral (Beneficios, Contratos)
-* Derecho Familiar (Asistencia Familiar, Divorcios)
+I can help you in areas such as:
+* Civil Law (Contracts, Debts)
+* Commercial Law (Companies, Societies)
+* Labor Law (Benefits, Contracts)
+* Family Law (Family Assistance, Divorces)
 
-Por favor, proporcióname más detalles.`);
+Please provide me with more details.`);
                 }
             }, 1000 + Math.random() * 1500); // Random realistic delay
         });

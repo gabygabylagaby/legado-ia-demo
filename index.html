@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legado IA - Asistencia Legal Inteligente</title>
+    <title>Legado AI - Intelligent Legal Assistance</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,26 +16,26 @@
                 <div class="auth-logo" style="display:flex;justify-content:center;width:100%;">
                     <img src="icono.png" alt="Legado Logo" width="64" height="64" style="margin:0 auto;border-radius:16px;box-shadow:0 2px 12px 0 rgba(35,4,64,0.07);background:#fff;object-fit:cover;display:block;" />
                 </div>
-                <h1 class="auth-title">Legado IA</h1>
-                <p class="auth-subtitle">Consultoría legal inteligente y precisa</p>
+                <h1 class="auth-title">Legado AI</h1>
+                <p class="auth-subtitle">Smart and precise legal consultancy</p>
             </div>
             
             <form class="auth-form" id="loginForm" autocomplete="off">
                 <div class="form-group">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" placeholder="tu@email.com" required autocomplete="username">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="you@email.com" required autocomplete="username">
                 </div>
                 <div class="form-group">
-                    <label for="password">Contraseña</label>
+                    <label for="password">Password</label>
                     <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password">
                 </div>
                 <button type="submit" class="auth-button">
-                    Iniciar sesión
+                    Sign in
                 </button>
             </form>
             <div id="loginLog" style="color:#b00;font-size:14px;text-align:center;margin-bottom:8px;min-height:18px;"></div>
             <div class="auth-footer" style="margin-top:32px;opacity:.7;">
-                <span style="font-size:13px;">Legado IA &copy; 2026</span>
+                <span style="font-size:13px;">Legado AI &copy; 2026</span>
             </div>
         </div>
         <div class="auth-background-accent"></div>
@@ -53,7 +53,7 @@
                 <div class="sidebar-actions">
                     <button class="new-chat-btn-modern" id="newChatBtn">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                        Nuevo chat
+                        New chat
                     </button>
                     <button class="search-btn-modern" id="searchChatBtn">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -63,11 +63,11 @@
 
             <div class="chat-history" id="chatHistory">
                 <div class="chat-history-section">
-                    <h3 class="history-title">Hoy</h3>
+                    <h3 class="history-title">Today</h3>
                     <div class="history-items" id="todayChats"></div>
                 </div>
                 <div class="chat-history-section">
-                    <h3 class="history-title">Ayer</h3>
+                    <h3 class="history-title">Yesterday</h3>
                     <div class="history-items" id="yesterdayChats"></div>
                 </div>
             </div>
@@ -78,10 +78,10 @@
                         <span>UL</span>
                     </div>
                     <div class="user-info">
-                        <span class="user-name">Usuario Legal</span>
-                        <span class="user-plan">Plan Profesional</span>
+                        <span class="user-name">Legal User</span>
+                        <span class="user-plan">Professional Plan</span>
                     </div>
-                    <button class="logout-mini-btn" id="logoutBtn" title="Cerrar sesión">
+                    <button class="logout-mini-btn" id="logoutBtn" title="Log out">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                             <polyline points="16 17 21 12 16 7"></polyline>
@@ -101,7 +101,7 @@
                 <button class="icon-btn" id="mobileMenuBtn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                 </button>
-                <span style="font-weight:600;color:#230440;">Legado IA</span>
+                <span style="font-weight:600;color:#230440;">Legado AI</span>
                 <button class="icon-btn" id="mobileNewChatBtn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 </button>
@@ -111,28 +111,28 @@
                 <!-- Welcome Screen -->
                 <div class="welcome-screen" id="welcomeScreen">
                     <div class="welcome-header" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;">
-                        <h1 class="welcome-title" style="font-size:2.1rem;font-weight:700;color:#230440;text-align:center;margin-bottom:0;">¿En qué puedo ayudarte hoy?</h1>
+                        <h1 class="welcome-title" style="font-size:2.1rem;font-weight:700;color:#230440;text-align:center;margin-bottom:0;">How can I help you today?</h1>
                         <div style="color:#6e6e80;font-size:1.1rem;text-align:center;max-width:420px;line-height:1.6;margin-top:0;">
-                            Tu asistente legal especializado en legislación boliviana.<br>
+                            Your legal assistant specialized in Bolivian legislation.<br>
                         </div>
                     </div>
                     
                     <div class="example-grid">
-                        <div class="example-card" data-prompt="¿Cuáles son los requisitos para interponer un recurso de casación en Bolivia?">
-                            <div class="card-title">Recurso de casación</div>
-                            <div class="card-desc">¿Cuáles son los requisitos para interponer un recurso de casación en Bolivia?</div>
+                        <div class="example-card" data-prompt="What are the requirements to file a cassation appeal in Bolivia?">
+                            <div class="card-title">Cassation appeal</div>
+                            <div class="card-desc">What are the requirements to file a cassation appeal in Bolivia?</div>
                         </div>
-                        <div class="example-card" data-prompt="Explícame el procedimiento de divorcio según el Código de Familia">
-                            <div class="card-title">Procedimiento de divorcio</div>
-                            <div class="card-desc">Explícame el procedimiento de divorcio según el Código de Familia</div>
+                        <div class="example-card" data-prompt="Explain the divorce procedure according to the Family Code">
+                            <div class="card-title">Divorce procedure</div>
+                            <div class="card-desc">Explain the divorce procedure according to the Family Code</div>
                         </div>
-                        <div class="example-card" data-prompt="¿Qué dice la ley sobre el despido injustificado en Bolivia?">
-                            <div class="card-title">Despido injustificado</div>
-                            <div class="card-desc">¿Qué dice la ley sobre el despido injustificado en Bolivia?</div>
+                        <div class="example-card" data-prompt="What does the law say about unjustified dismissal in Bolivia?">
+                            <div class="card-title">Unjustified dismissal</div>
+                            <div class="card-desc">What does the law say about unjustified dismissal in Bolivia?</div>
                         </div>
-                        <div class="example-card" data-prompt="Analiza los elementos del contrato de compraventa según el Código Civil">
-                            <div class="card-title">Contrato de compraventa</div>
-                            <div class="card-desc">Analiza los elementos del contrato de compraventa según el Código Civil</div>
+                        <div class="example-card" data-prompt="Analyze the elements of the sales contract according to the Civil Code">
+                            <div class="card-title">Sales contract</div>
+                            <div class="card-desc">Analyze the elements of the sales contract according to the Civil Code</div>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                 <div class="input-wrapper">
                     <textarea 
                         id="messageInput" 
-                        placeholder="Envía un mensaje a Legado IA..."
+                        placeholder="Message Legado AI..."
                         rows="1"
                     ></textarea>
                     <button class="send-button" id="sendButton" disabled>
@@ -157,7 +157,7 @@
                     </button>
                 </div>
                 <div class="disclaimer-text">
-                    Legado AI puede cometer errores. Considera verificar información importante.
+                    Legado AI can make mistakes. Consider checking important information.
                 </div>
             </div>
         </main>
